@@ -1,0 +1,66 @@
+seed: 42
+
+data:
+  root: data/processed
+  yaml: data/processed/sku110k.yaml
+  num_classes: 2
+
+train_order: [yolov8n, yolo11n, ssdlite, fasterrcnn, rtdetr]
+
+fallbacks:
+  rtdetr: retinanet
+
+models:
+  yolov8n:
+    framework: ultralytics
+    weights: yolov8n.pt
+    epochs: 50
+    batch: 8
+    imgsz: 640
+  yolo11n:
+    framework: ultralytics
+    weights: yolo11n.pt
+    epochs: 50
+    batch: 8
+    imgsz: 640
+  rtdetr:
+    framework: ultralytics
+    weights: rtdetr-l.pt
+    epochs: 10
+    batch: 2
+    imgsz: 384
+  fasterrcnn:
+    framework: torchvision
+    epochs: 15
+    batch: 4
+    imgsz: 640
+    lr: 0.005
+  ssdlite:
+    framework: torchvision
+    epochs: 25
+    batch: 16
+    imgsz: 320
+    lr: 0.001
+  retinanet:
+    framework: torchvision
+    epochs: 12
+    batch: 2
+    imgsz: 512
+    lr: 0.005
+
+experiments:
+  exp_imgsz480:
+    base: yolov8n
+    overrides: {imgsz: 480}
+  exp_lr001:
+    base: yolov8n
+    overrides: {lr0: 0.001, optimizer: SGD}
+  exp_noaug:
+    base: yolov8n
+    overrides: {mosaic: 0.0, fliplr: 0.0, hsv_h: 0.0, hsv_s: 0.0, hsv_v: 0.0, scale: 0.0, translate: 0.0, erasing: 0.0}
+  exp_frcnn_lr001:
+    base: fasterrcnn
+    overrides: {lr: 0.001}
+  exp_frcnn_sz512:
+    base: fasterrcnn
+    overrides: {imgsz: 512}
