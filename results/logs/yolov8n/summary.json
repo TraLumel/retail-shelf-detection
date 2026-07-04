@@ -1,0 +1,8 @@
+{
+  "model": "yolov8n",
+  "params_M": 3.01,
+  "epochs": 50,
+  "batch": 8,
+  "imgsz": 640,
+  "train_time_min": 56.3
+}

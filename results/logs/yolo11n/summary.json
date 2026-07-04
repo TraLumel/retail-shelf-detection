@@ -1,0 +1,8 @@
+{
+  "model": "yolo11n",
+  "params_M": 2.59,
+  "epochs": 50,
+  "batch": 8,
+  "imgsz": 640,
+  "train_time_min": 78.9
+}

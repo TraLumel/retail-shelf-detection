@@ -1,0 +1,8 @@
+{
+  "model": "exp_imgsz480",
+  "params_M": 3.01,
+  "epochs": 50,
+  "batch": 8,
+  "imgsz": 480,
+  "train_time_min": 42.2
+}

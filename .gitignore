@@ -21,10 +21,10 @@ results/logs/**/*.jpg
 results/logs/**/*.png
 results/logs/**/weights/
 
-# Логи
-logs/
+# Логи (только в корне проекта, чтобы не задеть results/logs/)
+/logs/
 *.log
-runs/
+/runs/
 nohup.out
 
 # Python

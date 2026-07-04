@@ -1,0 +1,8 @@
+{
+  "model": "rtdetr",
+  "params_M": 32.81,
+  "epochs": 10,
+  "batch": 2,
+  "imgsz": 384,
+  "train_time_min": 49.0
+}

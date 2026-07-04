@@ -1,0 +1,12 @@
+{
+  "model": "exp_frcnn_lr001",
+  "base_model": "fasterrcnn",
+  "params_M": 18.93,
+  "epochs": 15,
+  "batch": 4,
+  "imgsz": 640,
+  "lr": 0.001,
+  "optimizer": "SGD",
+  "train_time_min": 18.3,
+  "best_val_map50": 0.2724
+}

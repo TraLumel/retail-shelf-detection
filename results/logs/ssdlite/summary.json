@@ -1,0 +1,11 @@
+{
+  "model": "ssdlite",
+  "params_M": 2.21,
+  "epochs": 25,
+  "batch": 16,
+  "imgsz": 320,
+  "lr": 0.001,
+  "optimizer": "SGD",
+  "train_time_min": 9.9,
+  "best_val_map50": 0.119
+}
