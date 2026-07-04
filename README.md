@@ -48,12 +48,16 @@ main.py             точка входа
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 
-python main.py --stage prepare        # скачивание и подготовка данных
-python main.py --stage all            # обучение и оценка всех 5 моделей
-python main.py --stage experiments    # эксперименты с гиперпараметрами
-python main.py --stage plots          # графики и сравнительная таблица
-python main.py --stage train --model yolov8n   # одна модель
+python main.py --stage prepare                  # скачивание и подготовка данных
+python main.py --stage all                      # обучение и оценка всех 5 моделей
+python main.py --stage train --model yolov8n    # обучение одной модели
+python main.py --stage eval --model fasterrcnn  # оценка одной модели на тесте
+python main.py --stage experiments              # эксперименты с гиперпараметрами
+python main.py --stage plots                    # графики и сравнительная таблица
+python main.py --stage all --smoke              # быстрый smoke-тест (2 эпохи, часть данных)
 ```
+
+Доступные модели для `--model`: `yolov8n`, `yolo11n`, `ssdlite`, `fasterrcnn`, `rtdetr`.
 
 ## Воспроизводимость
 
