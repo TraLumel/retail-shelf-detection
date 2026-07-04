@@ -1,8 +1,5 @@
-# Виртуальное окружение
 venv/
 .venv/
-
-# Данные и веса — сохраняем структуру папок (.gitkeep), содержимое игнорируем
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*
@@ -14,26 +11,17 @@ weights/*
 *.ckpt
 *.weights
 *.onnx
-
-# у нас, в отличие от одногруппника, есть тяжёлые картинки внутри results/logs
-# (по ~100МБ на все прогоны) — их тоже не пушим, а сами метрики/конфиги оставляем
 results/logs/**/*.jpg
 results/logs/**/*.png
 results/logs/**/weights/
-
-# Логи (только в корне проекта, чтобы не задеть results/logs/)
 /logs/
 *.log
 /runs/
 nohup.out
-
-# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
 .ipynb_checkpoints/
-
-# IDE
 .vscode/
 .idea/
 .DS_Store
