@@ -2,9 +2,13 @@
 venv/
 .venv/
 
-# Данные и веса
-data/
-weights/
+# Данные и веса — сохраняем структуру папок (.gitkeep), содержимое игнорируем
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+weights/*
+!weights/.gitkeep
 *.pt
 *.pth
 *.ckpt
